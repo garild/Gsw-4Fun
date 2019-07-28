@@ -1,0 +1,21 @@
+.card-profile {
+    margin-top: 50px;
+    text-align: center;
+}
+.card-profile .card-avatar {
+    max-width: 100px;
+    max-height: 100px;
+}
+.sidebar .logo {
+    padding: 1px 0px;
+    margin: 0;
+    display: block;
+    position: relative;
+    z-index: 4;
+}.card-profile .card-avatar + .card-body {
+  margin-top: 1px;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 0.5rem;
+}

@@ -1,0 +1,93 @@
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="../../assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
+<link href="../../assets/css/demo.css" rel="stylesheet" />
+<style>
+.card {
+position: relative;
+display: flex;
+flex-direction: inherit;
+min-width: 0;
+word-wrap: break-word;
+background-color: #fff;
+background-clip: border-box;
+border: 1px solid #eeeeee;
+border-radius: 0.25rem;
+}
+.wizard-card {
+padding-top: 250px;
+z-index: 3;
+}
+.mat-form-field {
+font-size: inherit;
+font-weight: 550;
+line-height: 1.625;
+font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+.mat-raised-button.btn, .btn {
+position: relative;
+padding: 8px 40px;
+margin: 0.5125rem 10px;
+min-width: auto;
+font-size: .75rem;
+font-weight: 400;
+line-height: 1.42857143;
+text-decoration: none;
+text-transform: uppercase;
+vertical-align: middle;
+letter-spacing: 0;
+cursor: pointer;
+background-color: transparent;
+border: 0;
+border-radius: 0.2rem;
+outline: 0;
+transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+will-change: box-shadow, transform;
+}</style>
+<div class="image-container set-full-height">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-md-6 col-sm-offset-3">
+            <!--      Wizard container        -->
+            <div class="wizard-container">
+                <app-alert></app-alert>
+
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Sing In</h4>
+                        <p class="card-category">Domain Authentication </p>
+                    </div>
+                    <div class="card-body" style="padding-left: 20px">
+                        <form class="validate-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Enter login" type="text" formControlName="username"
+                                            [ngClass]="{'is-invalid': submitted && f.username.errors }">
+                                        <mat-error>
+                                            <mat-error class="error-message">Login is required</mat-error>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Password" type="password" formControlName="password"
+                                            name="pass" placeholder="Enter password">
+                                        <mat-error>
+                                            <mat-error class="error-message">Password is required</mat-error>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <br>
+                            <button mat-raised-button type="submit" class="btn btn-primary pull-right">Login</button>
+                        </form>
+
+                    </div>
+                </div> <!-- wizard container -->
+            </div>
+        </div> <!-- row -->
+    </div> <!--  big container -->
+</div>

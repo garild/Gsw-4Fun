@@ -1,0 +1,36 @@
+<ng-container *ngIf="currentUser; then UserAuthorized; else UserNeedLogin"></ng-container>
+<ng-template #UserAuthorized>
+  <ng-container *ngIf="currentUser.assignedTeam; then UserAssignedTeam; else UserUnAssignedTeam"></ng-container>
+  <ng-template #UserAssignedTeam>
+    <div class="wrapper">
+      <div class="sidebar" data-color="danger" data-image="../assets/img/sidebar-1.jpg">
+        <app-sidebar></app-sidebar>
+        <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg"></div>
+      </div>
+      <div class="main-panel ps-container ps-theme-default ps-active-y">
+        <div class="main-content">
+          <div class="content">
+            <div class="container-fluid">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+  <ng-template #UserUnAssignedTeam>
+    <div class="">
+      <div class="main-content">
+        <div class="content">
+          <div class="container-fluid">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ng-template>
+<ng-template #UserNeedLogin>
+  <router-outlet></router-outlet>
+</ng-template>

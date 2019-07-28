@@ -1,0 +1,14 @@
+<div class="logo-profile">
+  <a class="simple-text-profile logo" style="padding: 1px 0px">
+    <div class="card-profile">
+      <div class="card-avatar">
+        <img class="img" src="../assets/img/faces/marc.png">
+      </div>
+      <div class="card-body">
+        <h6 class="card-category text-gray"><b>{{loggedUser.assignedTeam}}</b></h6>
+        <h4 class="card-title">{{loggedUser.displayName.toLowerCase()}}</h4>
+        <button class="btn btn-primary btn-round" (click)="LogOut()">Log out</button>
+      </div>
+    </div>
+  </a>
+</div>

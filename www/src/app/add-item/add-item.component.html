@@ -1,0 +1,73 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Add new item</h4>
+                        <p class="card-category">Complete form</p>
+                    </div>
+                    <div class="card-body">
+                        <form class="validate-form" [formGroup]="backlogForm" (ngSubmit)="CreateBacklog()">
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput formControlName="backlogTitle" placeholder="Enter Title" type="text">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field>
+                                    <mat-select placeholder="Backlog Type" formControlName="backlogType">
+                                        <mat-option *ngFor="let type of BacklogTypes" [value]="type">
+                                            {{type}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field>
+                                    <mat-select placeholder="Enter Priority"  formControlName="backlogPriority">
+                                        <mat-option ngDefaultControl *ngFor="let type of BacklogPriorities" [value]="type">
+                                            {{type}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="row" style="margin-left: 0px">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput value="Registered" formControlName="backlogStatus"  placeholder="Status">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput value="New" formControlName="backlogResolution" placeholder="Resolution" type="text">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-left: 0px">
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput formControlName="assignedUser" placeholder="Assigned To" type="text">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput formControlName="reporterUser" placeholder="Reporter By" type="text">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                            <div class="col-md-12" style="padding-top: 20px">
+                                <label class="text-black-50">Description </label>
+                                <mat-form-field class="example-full-width">
+                                    <textarea matInput wrap="soft" formControlName="description" (resize)="true" rows="10"></textarea>
+                                </mat-form-field>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-primary pull-right">Create</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

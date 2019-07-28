@@ -1,0 +1,18 @@
+image: microsoft/dotnet:latest
+
+stages:
+  - deploy
+  
+before_script:
+  - 'dotnet restore'
+  
+release:
+  stage: deploy
+  only:
+    - master
+  artifacts:
+    paths:
+      - ./src
+  script:
+    # The output path is relative to the position of the csproj-file
+    - 'powershell .\build_Publish_All_Core_Services.ps1'
