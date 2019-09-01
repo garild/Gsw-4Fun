@@ -1,0 +1,9 @@
+WORKDIR /app
+
+RUN dotnet restore "GSWSite.sln"
+COPY . .
+RUN dotnet build "GSWSite.sln" -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish "GSWSite.sln" -c Release -o /app
+

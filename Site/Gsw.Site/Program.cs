@@ -1,7 +1,14 @@
-﻿using Microsoft.AspNetCore;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
-namespace GSW.AuthApi
+namespace Gsw.Site
 {
     public class Program
     {
@@ -12,7 +19,6 @@ namespace GSW.AuthApi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("https://localhost:5001")
                 .UseStartup<Startup>();
     }
 }

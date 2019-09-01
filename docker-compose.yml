@@ -1,0 +1,7 @@
+version: '3'
+services:
+  gsw.api:
+    build: ./src/services/Gsw.SiteApi
+    ports:
+      - "5000:5000"
+ 
